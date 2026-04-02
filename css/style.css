@@ -726,6 +726,25 @@ body::after{
   margin:0 auto;
 }
 
+.team-ig{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:12px;
+  font-size:.82rem;
+  color:var(--gray);
+  transition:color .3s;
+}
+
+.team-ig:hover{
+  color:var(--yellow);
+}
+
+.team-ig svg{
+  width:16px;height:16px;
+  fill:currentColor;
+}
+
 /* ============================================
    CLIENTS / VENUES CAROUSEL
    ============================================ */
