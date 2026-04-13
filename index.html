@@ -24,6 +24,15 @@
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0RB18GJFHQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0RB18GJFHQ');
+  </script>
+
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Favicon & App Icons -->
@@ -33,6 +42,13 @@
 </head>
 
 <body>
+
+  <!-- Ambient floating orbs -->
+  <div class="ambient-orbs" aria-hidden="true">
+    <div class="ambient-orb"></div>
+    <div class="ambient-orb"></div>
+    <div class="ambient-orb"></div>
+  </div>
 
   <!-- ============================================
      NAVIGATION
@@ -103,7 +119,7 @@
   <!-- ============================================
      SOCIAL PROOF
      ============================================ -->
-  <section class="social-proof section-pad">
+  <section class="social-proof section-pad section-glow">
     <div class="container">
       <div class="reveal">
         <p class="proof-stat">+6 MILIONI DI UTENTI RAGGIUNTI OGNI MESE</p>
@@ -115,14 +131,14 @@
   <!-- ============================================
      VALUE PROPOSITION
      ============================================ -->
-  <section class="value-section section-pad">
+  <section class="value-section section-pad section-glow">
     <div class="container">
       <p class="section-label reveal">Perch&eacute; sceglierci</p>
       <h2 class="section-title reveal">IL TUO EVENTO DIVENTA <br>CONTENUTO VIRALE</h2>
 
       <div class="value-grid">
 
-        <div class="value-card reveal reveal-delay-1">
+        <div class="value-card reveal reveal-scale reveal-delay-1">
           <div class="value-icon">
             <svg viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10" />
@@ -134,7 +150,7 @@
           </p>
         </div>
 
-        <div class="value-card reveal reveal-delay-2">
+        <div class="value-card reveal reveal-scale reveal-delay-2">
           <div class="value-icon">
             <svg viewBox="0 0 24 24">
               <polygon points="23 7 16 12 23 17 23 7" />
@@ -146,7 +162,7 @@
           </p>
         </div>
 
-        <div class="value-card reveal reveal-delay-3">
+        <div class="value-card reveal reveal-scale reveal-delay-3">
           <div class="value-icon">
             <svg viewBox="0 0 24 24">
               <path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z" />
@@ -159,7 +175,7 @@
           <p>Coinvolgimento del pubblico con interviste e momenti sul palco che rendono la serata indimenticabile.</p>
         </div>
 
-        <div class="value-card reveal reveal-delay-4">
+        <div class="value-card reveal reveal-scale reveal-delay-4">
           <div class="value-icon">
             <svg viewBox="0 0 24 24">
               <polygon
@@ -178,7 +194,7 @@
   <!-- ============================================
      SOCIAL INTEGRATION
      ============================================ -->
-  <section class="social-section section-pad">
+  <section class="social-section section-pad section-glow">
     <div class="container">
       <h2 class="section-title reveal">SEGUICI SUI SOCIAL</h2>
 
@@ -253,7 +269,7 @@
   <!-- ============================================
      TEAM
      ============================================ -->
-  <section class="team-section section-pad">
+  <section class="team-section section-pad section-glow">
     <div class="container">
       <p class="section-label reveal">Chi siamo</p>
       <h2 class="section-title reveal">IL TEAM</h2>

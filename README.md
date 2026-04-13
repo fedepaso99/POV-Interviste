@@ -81,7 +81,12 @@ SITOPOV/
 │   ├── team-federico.jpg
 │   ├── team-samuel.jpg
 │   ├── og-image.jpg
+│   ├── favicon.png     # 512x512 — favicon + Google search icon
+│   ├── favicon.ico     # 32x32 — browser tab icon
+│   ├── apple-touch-icon.png  # 180x180 — iOS bookmark icon
 │   └── logos/          # Venue logos
+├── robots.txt
+├── sitemap.xml
 └── README.md
 ```
 

@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* --- Scroll reveal --- */
-  const reveals = document.querySelectorAll('.reveal');
+  /* --- Scroll reveal (includes reveal-scale) --- */
+  const reveals = document.querySelectorAll('.reveal, .reveal-scale');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
   reveals.forEach(el => observer.observe(el));
 
@@ -111,5 +111,50 @@ document.addEventListener('DOMContentLoaded', () => {
     const clone = track.innerHTML;
     track.innerHTML += clone;
   }
+
+  /* --- Parallax glow movement on scroll --- */
+  const glowSections = document.querySelectorAll('.social-proof, .contact-section');
+  if (glowSections.length) {
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      glowSections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const sectionCenter = rect.top + rect.height / 2;
+        const viewCenter = window.innerHeight / 2;
+        const offset = (sectionCenter - viewCenter) * 0.02;
+        const before = section.querySelector('.parallax-bg');
+        if (before) {
+          before.style.transform = `translateY(${offset}px)`;
+        }
+      });
+    }, { passive: true });
+  }
+
+  /* --- Ambient orb parallax on scroll --- */
+  const orbs = document.querySelectorAll('.ambient-orb');
+  if (orbs.length) {
+    const speeds = [0.03, -0.02, 0.015];
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      orbs.forEach((orb, i) => {
+        const speed = speeds[i] || 0.02;
+        orb.style.transform = `translateY(${scrollY * speed}px)`;
+      });
+    }, { passive: true });
+  }
+
+  /* --- Interactive card tilt on mouse move --- */
+  const valueCards = document.querySelectorAll('.value-card');
+  valueCards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      card.style.transform = `translateY(-6px) perspective(600px) rotateY(${x * 4}deg) rotateX(${-y * 4}deg)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
 
 });
